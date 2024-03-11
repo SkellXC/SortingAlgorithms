@@ -68,14 +68,14 @@ else, pass.
 
 """
 def insertion(arr):
-    for pos in range(1,len(arr)):
-        current = arr[pos]
-        i = pos-1
+    for pos in range(1,len(arr)):# Starting from the second element, got through the whole array
+        current = arr[pos]# Store the value at the current element
+        i = pos-1 # The position of the previous element 
         
-        while i >= 0 and current < arr[i]:
-            arr[i+1] = arr[i]
-            i -= 1
-        arr[i+1] = current
+        while i >= 0 and current < arr[i]:# If the previous element is actually in the array and the current element is smaller than the one before it       
+            arr[i+1] = arr[i]             # set the item stored in i+1 (which would be 'pos') to whats stored in position i
+            i -= 1                        # Decrement i
+        arr[i+1] = current                # Set the value of the previous element to the current element
         
 
     return arr
